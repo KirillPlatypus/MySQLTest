@@ -10,8 +10,8 @@ namespace MySQL_Test.DB
 {
     class PhoneContext : DbContext
     {
-
         public DbSet<phone> Phones { get; set; }
+        public DbSet<user> User { get; set; }
 
         public PhoneContext()
         {
@@ -19,14 +19,12 @@ namespace MySQL_Test.DB
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql("server=127.0.0.1;port=3306;database=phones;uid=root;password=0013669");
+            optionsBuilder.UseMySQL("server=127.0.0.1;port=3306;database=phones;uid=root;password=0013669");
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             modelBuilder.Entity<phone>().HasKey(c => new { c.id});
+            modelBuilder.Entity<user>().HasKey(c => new { c.id, c.username, c.email});
         }
-
-
     }
 }

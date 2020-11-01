@@ -79,6 +79,12 @@ C:\Users\1\source\repos\MySQL Test\MySQL Test\obj\Debug\MySQL Test.csproj.CoreCo
 C:\Users\1\source\repos\MySQL Test\MySQL Test\obj\Debug\MySQL Test.csproj.CopyComplete
 C:\Users\1\source\repos\MySQL Test\MySQL Test\obj\Debug\MySQL Test.exe
 C:\Users\1\source\repos\MySQL Test\MySQL Test\obj\Debug\MySQL Test.pdb
-C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\MySqlConnector.dll
-C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\Pomelo.EntityFrameworkCore.MySql.dll
-C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\MySqlConnector.xml
+C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\MySql.Data.Entity.EF6.dll
+C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\MySql.Data.EntityFrameworkCore.dll
+C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\MySql.Data.Entity.EF6.xml
+C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\MySql.Data.EntityFrameworkCore.xml
+C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\System.Data.SQLite.dll
+C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\1\source\repos\MySQL Test\MySQL Test\bin\Debug\System.Data.SQLite.xml
+C:\Users\1\source\repos\MySQL Test\MySQL Test\obj\Debug\MySQL_Test.Form2.resources
