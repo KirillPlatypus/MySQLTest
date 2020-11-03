@@ -1,3 +1,5 @@
 .vs/
 .db-journal
 *.db-journal
+*.cache
+*.pdb

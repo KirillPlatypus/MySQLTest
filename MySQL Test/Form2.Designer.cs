@@ -28,35 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.EnterName = new System.Windows.Forms.TextBox();
+            this.EnterEmail = new System.Windows.Forms.TextBox();
             this.Username = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.Label();
             this.SignUp = new System.Windows.Forms.Button();
             this.WrongName = new System.Windows.Forms.Label();
             this.WrongEmail = new System.Windows.Forms.Label();
+            this.PhoneName = new System.Windows.Forms.Label();
+            this.phoneEnterName = new System.Windows.Forms.TextBox();
+            this.WrongPhoneName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // textBox1
+            // EnterName
             // 
-            this.textBox1.Location = new System.Drawing.Point(133, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.EnterName.Location = new System.Drawing.Point(133, 52);
+            this.EnterName.Name = "EnterName";
+            this.EnterName.Size = new System.Drawing.Size(100, 22);
+            this.EnterName.TabIndex = 0;
+            this.EnterName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // EnterEmail
             // 
-            this.textBox2.Location = new System.Drawing.Point(133, 113);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 1;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.EnterEmail.Location = new System.Drawing.Point(133, 113);
+            this.EnterEmail.Name = "EnterEmail";
+            this.EnterEmail.Size = new System.Drawing.Size(100, 22);
+            this.EnterEmail.TabIndex = 1;
+            this.EnterEmail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // Username
             // 
             this.Username.AutoSize = true;
-            this.Username.Location = new System.Drawing.Point(34, 52);
+            this.Username.Location = new System.Drawing.Point(17, 52);
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(73, 17);
             this.Username.TabIndex = 2;
@@ -65,7 +68,7 @@
             // email
             // 
             this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(34, 118);
+            this.email.Location = new System.Drawing.Point(17, 118);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(41, 17);
             this.email.TabIndex = 3;
@@ -73,7 +76,7 @@
             // 
             // SignUp
             // 
-            this.SignUp.Location = new System.Drawing.Point(96, 187);
+            this.SignUp.Location = new System.Drawing.Point(97, 313);
             this.SignUp.Name = "SignUp";
             this.SignUp.Size = new System.Drawing.Size(99, 40);
             this.SignUp.TabIndex = 4;
@@ -97,18 +100,46 @@
             this.WrongEmail.Size = new System.Drawing.Size(0, 17);
             this.WrongEmail.TabIndex = 6;
             // 
+            // PhoneName
+            // 
+            this.PhoneName.AutoSize = true;
+            this.PhoneName.Location = new System.Drawing.Point(17, 193);
+            this.PhoneName.Name = "PhoneName";
+            this.PhoneName.Size = new System.Drawing.Size(90, 17);
+            this.PhoneName.TabIndex = 7;
+            this.PhoneName.Text = "Phone Name";
+            // 
+            // phoneEnterName
+            // 
+            this.phoneEnterName.Location = new System.Drawing.Point(133, 190);
+            this.phoneEnterName.Name = "phoneEnterName";
+            this.phoneEnterName.Size = new System.Drawing.Size(100, 22);
+            this.phoneEnterName.TabIndex = 8;
+            this.phoneEnterName.TextChanged += new System.EventHandler(this.phoneEnterName_TextChanged);
+            // 
+            // WrongPhoneName
+            // 
+            this.WrongPhoneName.AutoSize = true;
+            this.WrongPhoneName.Location = new System.Drawing.Point(133, 215);
+            this.WrongPhoneName.Name = "WrongPhoneName";
+            this.WrongPhoneName.Size = new System.Drawing.Size(0, 17);
+            this.WrongPhoneName.TabIndex = 9;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(320, 394);
+            this.Controls.Add(this.WrongPhoneName);
+            this.Controls.Add(this.phoneEnterName);
+            this.Controls.Add(this.PhoneName);
             this.Controls.Add(this.WrongEmail);
             this.Controls.Add(this.WrongName);
             this.Controls.Add(this.SignUp);
             this.Controls.Add(this.email);
             this.Controls.Add(this.Username);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.EnterEmail);
+            this.Controls.Add(this.EnterName);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
@@ -119,12 +150,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox EnterName;
+        private System.Windows.Forms.TextBox EnterEmail;
         private System.Windows.Forms.Label Username;
         private System.Windows.Forms.Label email;
         private System.Windows.Forms.Button SignUp;
         private System.Windows.Forms.Label WrongName;
         private System.Windows.Forms.Label WrongEmail;
+        private System.Windows.Forms.Label PhoneName;
+        private System.Windows.Forms.TextBox phoneEnterName;
+        private System.Windows.Forms.Label WrongPhoneName;
     }
 }

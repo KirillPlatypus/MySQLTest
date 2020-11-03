@@ -1,60 +1,67 @@
 ﻿using MySql.Data.MySqlClient;
+using MySQL_Test.DB;
 using System;
+using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace MySQL_Test
 {
     public partial class Form1 : Form
     {
-        private MySqlCommand MyCommand;
-        private SQLiteCommand LiteCommand;
+        DBComponent dbComponent;
 
         public Form1()
         {
             InitializeComponent();
+            DbModelComponent.table = "user";
 
-            var selectCommand = $"SELECT * FROM user";
-
-            MyCommand = new MySqlCommand(selectCommand, Program.MyConnector);
-            LiteCommand = new SQLiteCommand(selectCommand, Program.LiteConnector);
+            dbComponent = new DBComponent();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
         }
 
-        private void CheckUsername(string username, string email)
+        private string CheckLogin(List<object> username, List<object> email)
         {
-            if (textBox1.Text == username || textBox1.Text == email)
-            {
+            var usernameSelect = from s in username
+                             orderby s
+                             select s;
+            var emailSelect = from s in email
+                             orderby s
+                             select s;
 
-                textBox2.Text += "exist \r\n";
-            }
-            else
+            foreach (object login in usernameSelect)
             {
-                textBox2.Text += "user not exist \r\n";
+                if ((string)login == textBox1.Text)
+                    return textBox2.Text += "User exist\r\n ";
             }
+            foreach (object login in emailSelect)
+            {
+                if ((string)login == textBox1.Text)
+                    return textBox2.Text += "User exist\r\n ";
+            }
+            return textBox2.Text += "User not exist\r\n ";
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (Program.MyConnector != null)
+            if (DBComponent.MyConnect != null)
             {
-                for (int i = 0; i < Program.Select("id", MyCommand).Count; i++)
-                {
-                    CheckUsername((string)Program.Select("username", MyCommand)[i],
-                                  (string)Program.Select("email", MyCommand)[i]);
-                }
+
+                CheckLogin(DBComponent.Select("username", new MySqlCommand(dbComponent.selectCom, DBComponent.MyConnect), DBComponent.MyConnect),
+                               DBComponent.Select("email", new MySqlCommand(dbComponent.selectCom, DBComponent.MyConnect), DBComponent.MyConnect));
+
             }
             else
             {
-                for (int i = 0; i < Program.Select("id", LiteCommand).Count; i++)
-                {
-                    CheckUsername((string)Program.Select("username", LiteCommand)[i],
-                                  (string)Program.Select("email", LiteCommand)[i]);
-                }
+
+                CheckLogin(DBComponent.Select("username", new SQLiteCommand(dbComponent.selectCom, DBComponent.LiteConnect), DBComponent.LiteConnect),
+                              DBComponent.Select("email", new SQLiteCommand(dbComponent.selectCom, DBComponent.LiteConnect), DBComponent.LiteConnect));
+
             }
         }
 
@@ -68,7 +75,7 @@ namespace MySQL_Test
         private void SignUp_Click(object sender, EventArgs e)
         {
             Form2 dlg = new Form2();
-            if (Program.MyConnector != null)
+            if (DBComponent.MyConnect != null)
             {
                 dlg.ShowDialog();
             }

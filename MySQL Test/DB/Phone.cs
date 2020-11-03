@@ -7,12 +7,12 @@ namespace MySQL_Test.DB
     public partial class phone 
     {
 
-        [Key]
+        [Required]
         [Column(Order = 0)]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
-        [Required]
+        [Key]
         [Column(Order = 1)]
         [StringLength(15)]
         public string PhoneName { get; set; }
