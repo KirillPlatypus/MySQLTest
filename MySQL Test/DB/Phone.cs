@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MySQL_Test.DB
-{
+{   
     [Table("phone")]
     public partial class phone 
     {
@@ -14,7 +14,7 @@ namespace MySQL_Test.DB
 
         [Key]
         [Column(Order = 1)]
-        [StringLength(15)]
+        [StringLength(40)]
         public string PhoneName { get; set; }
 
     }

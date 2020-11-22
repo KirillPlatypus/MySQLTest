@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace MySQL_Test.DB
 {
     [Table("user")]
-    public partial class user 
+    public partial class user
     {
         [Key]
         [Column(Order = 0)]
@@ -18,7 +18,7 @@ namespace MySQL_Test.DB
 
         [Key]
         [Column(Order = 2)]
-        [StringLength(25)]
+        [StringLength(40)]
         public string email { get; set; }
 
         [ForeignKey("PhoneIdUser")]

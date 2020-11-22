@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
 using System.Data.SQLite;
 using System.Linq;
 using System.Windows.Forms;
@@ -11,11 +10,6 @@ namespace MySQL_Test
 {
     static class Program
     {        
-        internal static PhoneContext phoneContext;
-
-        internal static List<user> selectUser;
-        internal static List<phone> selectPhone ;
-
         [STAThread]
         static void Main()
         {
@@ -24,17 +18,17 @@ namespace MySQL_Test
 
             try
             {
-                phoneContext = new PhoneContext();
+                DbModelComponent.phoneContext = new PhoneContext();
 
-                selectUser = phoneContext.User.ToList();
-                selectPhone = phoneContext.Phones.ToList();
+                DbModelComponent.selectUser = DbModelComponent.phoneContext.User.ToList();
+                DbModelComponent.selectPhone = DbModelComponent.phoneContext.Phones.ToList();
 
-                DBComponent.MyConnect = new MySqlConnection("server = 127.0.0.1; user id = root; password=0013669;database=phones");
-                DBComponent.LiteConnect = new SQLiteConnection("Data Source=C:/Users/1/source/repos/MySQL Test/MySQL Test/phones.db");
+                DbModelComponent.MyConnect = new MySqlConnection("server = 127.0.0.1; user id = root; password=0013669;database=phones");
+                DbModelComponent.LiteConnect = new SQLiteConnection("Data Source=C:/Users/1/source/repos/MySQL Test/MySQL Test/phones.db");
             }
-            catch (InvalidOperationException)
+            catch (Exception)
             {
-                DBComponent.LiteConnect = new SQLiteConnection("Data Source=C:/Users/1/source/repos/MySQL Test/MySQL Test/phones.db");
+                DbModelComponent.LiteConnect = new SQLiteConnection("Data Source=C:/Users/1/source/repos/MySQL Test/MySQL Test/phones.db");
             }
 
             Application.Run(new Form1());

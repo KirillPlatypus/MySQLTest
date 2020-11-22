@@ -24,7 +24,7 @@ namespace MySQL_Test.DB
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<phone>().HasKey(c => new { c.id});
-            modelBuilder.Entity<user>().HasKey(c => new { c.id, c.username, c.email});
+            modelBuilder.Entity<user>().HasKey(c => new { c.id});
         }
     }
 }
